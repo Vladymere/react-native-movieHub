@@ -7,6 +7,8 @@ export const TMDB_CONFIG = {
   },
 };
 
+
+
 export const fetchMovies = async ({
   query,
 }: {
