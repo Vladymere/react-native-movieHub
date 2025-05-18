@@ -23,16 +23,16 @@ const Index = () => {
   const router = useRouter();
 
   const {
-    data: trendingMovies,
+    data: trendingMovies = [],
     loading: trendingLoading,
     error: trendingError,
-  } = useFetch(getTrendingMovies);
+  } = useFetch<TrendingMovie[]>(getTrendingMovies);
 
   const {
-    data: movies,
+    data: movies = [],
     loading: moviesLoading,
     error: moviesError,
-  } = useFetch(() => fetchMovies({ query: "" }));
+  } = useFetch<Movie[]>(() => fetchMovies({ query: "" }));
 
   return (
     <View className="flex-1 bg-primary">
